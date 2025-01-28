@@ -1,3 +1,7 @@
+:root {
+    --top-stack-pos: 0px;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -17,6 +21,33 @@ body {
     position: relative;
 }
 
+@keyframes insert-anim {
+    from {
+        bottom: 100%;
+    }
+    to {
+        bottom: var(--top-stack-pos);
+    }
+}
+
+@keyframes remove-anim {
+    from {
+        bottom: var(--top-stack-pos);
+    } 
+    to {
+        bottom: 105%;
+    }
+}
+
+/* @keyframes remove-anim {
+    from {
+        bottom: var(--top-stack-pos);
+    }
+    to {
+
+    }
+} */
+
 .stack-item {
     display: flex;
     justify-content: center;
@@ -27,6 +58,7 @@ body {
     color: whitesmoke; 
     border-radius: 13px;
     position: absolute;
+    animation: 0.87s insert-anim ease-in-out;
 }
 
 .push-btn,
